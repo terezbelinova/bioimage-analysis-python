@@ -24,25 +24,26 @@ The easiest way to get started is to file an issue to tell us about a spelling
 mistake, some awkward wording, or a factual error. This is a good way to
 introduce yourself and to meet some of our community members.
 
-1. If you do not have a [GitHub][github] account, you can [send us comments by
-   email][contact]. However, we will be able to respond more quickly if you use
-   one of the other methods described below.
-
-2. If you have a [GitHub][github] account, or are willing to [create
+1. If you have a [GitHub][github] account, or are willing to [create
    one][github-join], but do not know how to use Git, you can report problems
    or suggest improvements by [creating an issue][issues]. This allows us to
    assign the item to someone and to respond to it in a threaded discussion.
 
-3. If you are comfortable with Git, and would like to add or change material,
+2. If you are comfortable with Git, and would like to add or change material,
    you can submit a pull request (PR). Instructions for doing this are
-   [included below](#using-github).
+   [included below](#using-github).  
+
+3. If you do not have a [GitHub][github] account, you can [send us comments by
+   email][contact]. However, we will be able to respond more quickly if you use
+   one of the other methods described below.
 
 Note: if you want to build the website locally, please refer to [The Workbench
 documentation][template-doc].
 
 ### Where to Contribute
 
-1. If you wish to change this lesson, add issues and pull requests here.
+1. If you wish to change this lesson, add issues and pull requests in this repository.
+
 2. If you wish to change the template used for workshop websites, please refer
    to [The Workbench documentation][template-doc].
 
@@ -64,13 +65,23 @@ fresh eyes are always welcome.
 
 ### What to Contribute (This Lesson)
 
-Any contributions are welcome, particularly ideas for how the existing content could be
-improved or updated, and/or errors that need to be corrected. Comments on existing issues
-and reviews of pull requests are similarly welcome.
+Any contributions are welcome, however major contributions should focus on the current development stage.
 
 If you plan to submit a pull request, please open an issue
 (or comment on an existing thread) first to ensure that effort is not duplicated
 or spent making a change that will not be accepted by the Maintainers.
+
+#### Excercise contribution
+
+If you want to propose a new excercise idea for a specific learning objective:
+
+1. Verify the list of open [issues](https://github.com/carpentries-incubator/bioimage-analysis-python/issues) and if an idea is already proposed, comment on it
+2. If no excercise has been proposed for a learning objective, open an issue with [this template](https://github.com/carpentries-incubator/bioimage-analysis-python/issues/new?template=exercise-proposal.md)
+
+If you want to contribute with an excercise content:
+
+1. Comment on a corresponding issue or open one if it does not exist
+2. Submit a pull request following [this template]()
 
 #### Content / style guidelines
 
@@ -89,7 +100,7 @@ or spent making a change that will not be accepted by the Maintainers.
    | [scikit-image](https://scikit-image.org/)  | scikit-image  | `skimage` |
    | [NumPy](https://numpy.org/)  | NumPy | `numpy` |
    | [Matplotlib](https://matplotlib.org/) | Matplotlib | `matplotlib` |
-   | [imageio](https://imageio.readthedocs.io/en/stable/index.html) | imageio | `imageio` |
+   | [BioIO](https://github.com/bioio-devs/bioio) | BioIO | `bioio` |
 
 
 - When importing scikit-image use:
@@ -104,42 +115,34 @@ or spent making a change that will not be accepted by the Maintainers.
    rr, cc = ski.draw.rectangle(start=(357, 44), end=(740, 720))
    ```
 
-- For reading and writing images, use the [imageio](https://imageio.readthedocs.io/en/stable/index.html)
-  library and avoid use of `skimage.io`. For example:
+- For reading and writing images, use the [BioIO](https://github.com/bioio-devs/bioio)
+  library and avoid use of other libraries. For example:
    ```python
-   import imageio.v3 as iio
+   from bioio import BioImage
 
-   chair = iio.imread(uri="data/chair.jpg")  # read an image
-   iio.imwrite(uri="data/chair.tif", image=chair)  # write an image
+   chair = BioImage("data/chair.jpg")  # read an image
+   chair.data # return numpy array
    ```
 
 - Comments providing an overall description of a code snippet should use triple quotes `"""`, e.g.,
    ```python
    """Python script to load a colour image in grayscale"""
 
-   chair = iio.imread(uri="data/chair.jpg")
-   gray_chair = ski.color.rgb2gray(chair)
+   chair = BioImage("data/chair.jpg") 
+   gray_chair = ski.color.rgb2gray(chair.data)
    ```
 
 ### What *Not* to Contribute (General)
 
-Our lessons already contain more material than we can cover in a typical
-workshop, so we are usually *not* looking for more concepts or tools to add to
-them. As a rule, if you want to introduce a new idea, you must (a) estimate how
-long it will take to teach and (b) explain what you would take out to make room
-for it. The first encourages contributors to be honest about requirements; the
-second, to think hard about priorities.
+We are not looking for contributions falling outside of the defined [Learning Objectives](https://github.com/carpentries-incubator/bioimage-analysis-python/wiki/Learning-Objectives).
 
-We are also not looking for exercises or other material that only run on one
+We are also not looking for material that only runs on one
 platform. Our workshops typically contain a mixture of Windows, macOS, and
 Linux users; in order to be usable, our lessons must run equally well on all
 three.
 
 ### What *Not* to Contribute (This Lesson)
 
-Although most contributions will be welcome at this stage of the curriculum's development,
-the time available to deliver the content in a training event is strictly limited
-and needs to be accounted for when considering the addition of any new content.
 If you want to suggest the addition of new content, especially whole new sections or episodes,
 please open an issue to discuss this with the Maintainers first and provide the following
 information alongside a summary of the content to be added:
@@ -178,7 +181,7 @@ Pull requests made to the default branch of this repository
 (from which the lesson site is built)
 can only be merged after at least one approving review from a Maintainer.
 Any Maintainer can merge a pull request that has received at least one approval,
-but they may prefer to wait for further input from others before merging.
+but they may prefer to wait for further input from other curriculum developers before merging.
 
 ### Other Resources
 
@@ -189,7 +192,7 @@ community listed at <https://carpentries.org/connect/> including via social
 media, slack, newsletters, and email lists. You can also [reach us by
 email][contact].
 
-[repo]: https://github.com/datacarpentry/image-processing
+[repo]: https://github.com/carpentries-incubator/bioimage-analysis-python
 [cldt-lo]: https://carpentries.github.io/lesson-development-training/05-objectives.html#learning-objectives
 [contact]: mailto:team@carpentries.org
 [cp-site]: https://carpentries.org/

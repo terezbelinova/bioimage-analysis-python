@@ -6,13 +6,15 @@ This is lesson is **currently under heavy development**. Keep an eye of the [Iss
 
 ## Lesson Content
 
-The lesson content is still being developed together and openly on [this CodiMD document](https://codimd.carpentries.org/LPHnyJElS1qcXmd3SFqdrA?both). Consult the [project Wiki](https://github.com/carpentries-incubator/bioimage-analysis-python/wiki) for more information.
+The lesson content is still being developed, by following the Carpentries [Life Cycle of Lessons](https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html).  Consult the [project Wiki](https://github.com/carpentries-incubator/bioimage-analysis-python/wiki) for more information.  
 
 The original ideas and discussions in our first in-person workshop has been archived [here](https://codimd.carpentries.org/_XWgpty6Q06VpTmBUA4CWw?edit).
 
 ## Contribution
 
-Make a suggestion or correct an error by [raising an Issue](https://github.com/carpentries-incubator/bioimage-analysis-python/issues).
+Make a suggestion or correct an error by [raising an Issue](https://github.com/carpentries-incubator/bioimage-analysis-python/issues). 
+
+We are currently in the pre-alpha phase and are actively developing [the learning outcomes assessment](https://carpentries.github.io/lesson-development-training/fig/cldt-design-process.svg). Although all suggestions are welcome, major contributions should be focused on the current development phase.
 
 Please see the [CONTRIBUTING.md file](CONTRIBUTING.md) for contributing guidelines and details on how to get involved with 
 this project. Some specific guidelines for content / style are provided in the 
@@ -24,7 +26,7 @@ All participants should agree to abide by the [The Carpentries Code of Conduct](
 
 ## Lesson Maintainers
 
-The Image Processing with Python lesson is currently being maintained by:
+The Bio-Image Analysis with Python lesson is currently being maintained by:
 
 - [Marco Dalla Vecchia](https://github.com/marcodallavecchia)
 - [Tereza Belinova](https://github.com/terezbelinova)
