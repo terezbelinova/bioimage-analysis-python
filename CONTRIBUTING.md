@@ -81,7 +81,7 @@ If you want to propose a new excercise idea for a specific learning objective:
 If you want to contribute with an excercise content:
 
 1. Comment on a corresponding issue or open one if it does not exist
-2. Submit a pull request following [this template]()
+2. Submit a pull request following [this template](https://github.com/carpentries-incubator/bioimage-analysis-python/pull/34)
 
 #### Content / style guidelines
 
